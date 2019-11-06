@@ -25,5 +25,6 @@ itineraries = browser.get_flights(datetime(year=2020, month=1, day=12), "OPO", d
 
 TODO
 ----
+* Add compatibility with python 3.5 / 3.6
 * Add docstring to all functions
 * Add helper methods to the different containers
