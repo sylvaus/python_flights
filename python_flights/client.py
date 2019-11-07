@@ -156,9 +156,9 @@ class FlightBrowser:
         id_segments = {}
         for json_dict in response_json.get("Segments", []):
             id_ = json_dict["Id"]
-            departure_place = id_places[json_dict["DestinationStation"]]
+            departure_place = id_places[json_dict["OriginStation"]]
             departure_time = datetime.strptime(json_dict["DepartureDateTime"], JSON_DATE_FORMATTING)
-            arrival_place = id_places[json_dict["OriginStation"]]
+            arrival_place = id_places[json_dict["DestinationStation"]]
             arrival_time = datetime.strptime(json_dict["ArrivalDateTime"], JSON_DATE_FORMATTING)
             carrier = id_carriers[json_dict["Carrier"]]
             operating_carrier = id_carriers[json_dict["OperatingCarrier"]]
@@ -178,9 +178,9 @@ class FlightBrowser:
                 id_segments[segment_id]
                 for segment_id in json_dict.get("SegmentIds", [])
             ]
-            departure_place = id_places[json_dict["DestinationStation"]]
+            departure_place = id_places[json_dict["OriginStation"]]
             departure_date = datetime.strptime(json_dict["Departure"], JSON_DATE_FORMATTING)
-            arrival_place = id_places[json_dict["OriginStation"]]
+            arrival_place = id_places[json_dict["DestinationStation"]]
             arrival_date = datetime.strptime(json_dict["Arrival"], JSON_DATE_FORMATTING)
             duration = timedelta(minutes=json_dict["Duration"])
             stops = [

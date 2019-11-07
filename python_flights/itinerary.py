@@ -25,3 +25,15 @@ class Itinerary:
     @property
     def inbound_duration(self):
         return self.inbound_trip.duration
+
+    @property
+    def outbound_stops(self):
+        return self.outbound_trip.stops
+
+    @property
+    def inbound_stops(self):
+        return self.inbound_trip.stops
+
+    @property
+    def total_nb_stops(self):
+        return len(self.outbound_stops) + len(self.inbound_stops)

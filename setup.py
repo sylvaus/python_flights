@@ -16,7 +16,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     requires=["requests"],
-    python_requires='>3.7.0',
+    python_requires='>=3.7.0',
     classifiers=[
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
